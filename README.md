@@ -26,7 +26,7 @@ Um aplicativo web full-stack moderno e intuitivo para gerenciar suas finanças p
 - **Sistema de Notificações** - Histórico completo de notificações com marcação de leitura
 - **Alertas Inteligentes** - Configuração de limites de alerta por categoria
 
-## 🚀 Stack Tecnológico
+##  Stack Tecnológico
 
 ### Frontend
 - **Next.js 14+** - Framework React moderno com App Router
