@@ -344,7 +344,7 @@ pnpm test:coverage
 - **CORS** - Configurado para produção
 - **Environment Variables** - Secrets seguros
 
-## 🚀 Deploy
+##  Deploy
 
 ### Vercel (Recomendado)
 
