@@ -6,7 +6,7 @@ Um aplicativo web full-stack moderno e intuitivo para gerenciar suas finanças p
 ![Node](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)
 ![TypeScript](https://img.shields.io/badge/typescript-%3E%3D5.0.0-blue)
 
-## 🎯 Características Principais
+##  Características Principais
 
 ### Gerenciamento Completo de Finanças
 - **Contas Bancárias** - Crie e gerencie múltiplas contas (Corrente, Poupança, Investimento, Cartão de Crédito)
@@ -51,14 +51,14 @@ Um aplicativo web full-stack moderno e intuitivo para gerenciar suas finanças p
 - **Playwright** - Testes E2E
 - **GitHub Actions** - CI/CD automatizado
 
-## 📋 Pré-requisitos
+##  Pré-requisitos
 
 - **Node.js** >= 18.0.0
 - **npm** ou **pnpm** >= 8.0.0
 - **PostgreSQL** >= 12.0
 - **Git**
 
-## 🔧 Instalação e Configuração
+##  Instalação e Configuração
 
 ### 1. Clonar o Repositório
 
@@ -116,7 +116,7 @@ pnpm dev
 
 O aplicativo estará disponível em `http://localhost:3000`
 
-## 📁 Estrutura do Projeto
+##  Estrutura do Projeto
 
 ```
 FinTrackPro/
@@ -140,7 +140,7 @@ FinTrackPro/
 └── package.json
 ```
 
-## 🔌 API tRPC
+##  API tRPC
 
 A API é totalmente type-safe através do tRPC. Todos os endpoints estão definidos em `server/routers.ts`.
 
@@ -180,7 +180,7 @@ createMutation.mutate({
 | `goals` | `list`, `getById`, `create`, `update` |
 | `dashboard` | `summary` |
 
-## 📊 Schema do Banco de Dados
+##  Schema do Banco de Dados
 
 ### Tabelas Principais
 
@@ -271,7 +271,7 @@ createMutation.mutate({
 - createdAt, updatedAt
 ```
 
-## 🧪 Testes
+##  Testes
 
 ### Executar Testes Unitários
 
@@ -291,7 +291,7 @@ pnpm test:e2e
 pnpm test:coverage
 ```
 
-## 📱 Funcionalidades por Página
+##  Funcionalidades por Página
 
 ### Dashboard
 - Resumo financeiro com saldo total
@@ -336,7 +336,7 @@ pnpm test:coverage
 - Filtrar por tipo
 - Deletar notificações
 
-## 🔐 Segurança
+##  Segurança
 
 - **Autenticação OAuth** - Integração com Manus OAuth
 - **Type Safety** - TypeScript em todo o projeto
@@ -374,19 +374,8 @@ EXPOSE 3000
 CMD ["pnpm", "start"]
 ```
 
-## 📈 Roadmap Futuro
 
-- [ ] Exportação de dados (PDF/CSV)
-- [ ] Importação de transações (CSV/Excel)
-- [ ] Gráficos avançados e relatórios
-- [ ] Sincronização com bancos (Open Banking)
-- [ ] App mobile (React Native)
-- [ ] Análise de gastos com IA
-- [ ] Recomendações de economia
-- [ ] Multi-moeda
-- [ ] Compartilhamento de orçamentos
-
-## 🤝 Contribuindo
+##  Contribuindo
 
 Contribuições são bem-vindas! Por favor:
 
@@ -396,17 +385,13 @@ Contribuições são bem-vindas! Por favor:
 4. Push para a branch (`git push origin feature/AmazingFeature`)
 5. Abra um Pull Request
 
-## 📝 Licença
+##  Licença
 
 Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
-## 💬 Suporte
+##  Suporte
 
 Para suporte, abra uma issue no repositório ou entre em contato através do email.
-
-## 👨‍💻 Autor
-
-Desenvolvido com ❤️ por [Seu Nome]
 
 ---
 
