@@ -1,29 +1,84 @@
 import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { APP_LOGO, APP_TITLE, getLoginUrl } from "@/const";
+import { useLocation } from "wouter";
+import { useEffect } from "react";
+import { getLoginUrl } from "@/const";
 
-/**
- * All content in this page are only for example, delete if unneeded
- * When building pages, remember your instructions in Frontend Workflow, Frontend Best Practices, Design Guide and Common Pitfalls
- */
 export default function Home() {
-  // The userAuth hooks provides authentication state
-  // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
-  let { user, loading, error, isAuthenticated, logout } = useAuth();
+  const { user, loading } = useAuth();
+  const [, setLocation] = useLocation();
 
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
+  useEffect(() => {
+    if (!loading) {
+      if (user) {
+        setLocation("/dashboard");
+      }
+    }
+  }, [user, loading, setLocation]);
 
-  // Use APP_LOGO (as image src) and APP_TITLE if needed
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+          <p className="text-muted-foreground">Carregando...</p>
+        </div>
+      </div>
+    );
+  }
 
-  return (
-    <div className="min-h-screen flex flex-col">
-      <main>
-        <Loader2 className="animate-spin" />
-        Example Page
-        <Button variant="default">Example Button</Button>
-      </main>
-    </div>
-  );
+  if (!user) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted">
+        <div className="w-full max-w-md p-8 space-y-8">
+          <div className="text-center space-y-2">
+            <h1 className="text-4xl font-bold tracking-tight">FinTrackPro</h1>
+            <p className="text-muted-foreground">
+              Gerencie suas finanças pessoais com inteligência
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <div className="grid grid-cols-1 gap-4">
+              <div className="p-4 bg-card rounded-lg border border-border">
+                <h3 className="font-semibold mb-2">💰 Rastreamento Completo</h3>
+                <p className="text-sm text-muted-foreground">
+                  Monitore todas as suas transações em um único lugar
+                </p>
+              </div>
+              <div className="p-4 bg-card rounded-lg border border-border">
+                <h3 className="font-semibold mb-2">📊 Análises Detalhadas</h3>
+                <p className="text-sm text-muted-foreground">
+                  Visualize seus gastos com gráficos e relatórios
+                </p>
+              </div>
+              <div className="p-4 bg-card rounded-lg border border-border">
+                <h3 className="font-semibold mb-2">🎯 Orçamentos Inteligentes</h3>
+                <p className="text-sm text-muted-foreground">
+                  Defina limites e receba alertas quando se aproximar
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <Button
+            onClick={() => {
+              window.location.href = getLoginUrl();
+            }}
+            size="lg"
+            className="w-full"
+          >
+            Entrar com Manus
+          </Button>
+
+          <p className="text-xs text-center text-muted-foreground">
+            Ao entrar, você concorda com nossos termos de serviço
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  return null;
 }
+
